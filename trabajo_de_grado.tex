@@ -1,0 +1,84 @@
+% Configuracion del formato segun documento de GUIA PARA LA ELABORACIÓN DE TRABAJOS DE GRADO de la cs.umss.edu.bo
+
+\documentclass[11pt,twoside,letterpaper]{book}
+% tipo de letra Helvetica, algo parecida a Arial
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% castellano
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc} 
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{hyperref}
+
+
+%margenes
+\usepackage[top=2cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+% quita la sangria a los parrafos (sin sangria se ve feo :-)
+%\setlength{\parindent}{0cm}
+
+% Para tener cabecera y pie de página con un estilo personalizado
+\usepackage{fancyhdr}
+
+% Espacio parrafos
+\setlength{\parskip}{6pt}
+
+\usepackage[pdftex]{graphicx}
+\pdfcompresslevel=9
+
+\usepackage{adjustbox}
+
+% Todas las imágenes están en el directorio tp-img:
+\newcommand{\imgdir}{includes}
+\graphicspath{{\imgdir/}}
+
+\begin{document}
+%
+% caratula
+%
+\input{caratula}
+\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
+%\cleardoublepage
+
+%Dedicatoria y agradecimientos
+\chapter*{}
+\begin{flushright}
+\textit{Dedicado a \\
+    mi familia}
+    \end{flushright}
+\newpage
+
+% Las páginas empiezan a contar desde aqui
+%\setcounter{page}{1}
+
+% Pongo el índice en una página aparte:
+\tableofcontents
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el indice de contenidos
+\listoffigures % indice de figuras
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
+\listoftables % indice de tablas
+
+
+\chapter*{Abstract}
+Ficha resumen del trabajo 
+
+
+\chapter{Introducción}
+\pagenumbering{arabic}
+\input{introduccion}
+\chapter{Marco Teórico}
+\input{marco_teorico}
+\chapter{Area de aplicacion}
+\chapter{Metodologia}
+\chapter{Conclusiones y Recomendaciones}
+
+\input{bibliografia}
+\end{document}
+
+
